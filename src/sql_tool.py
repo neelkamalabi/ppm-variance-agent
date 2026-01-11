@@ -2,15 +2,15 @@ from src.database import Database
 from typing import Any, Dict
 
 
-def execute_sql_function(self, sql_query: str) -> Dict[str, Any]:
+def execute_sql_function(sql_query: str) -> Dict[str, Any]:
     """
-    Execute a SQL query function call.
+    Execute a SQL SELECT query against the Zero-Based Budgeting MySQL database and return the results. Use this function to answer user questions about budget data.
 
     Args:
-        sql_query: SQL query to execute
+        sql_query (str): The SQL SELECT query to execute. Must be a valid SELECT statement for MySQL. Can include CTEs (WITH clauses). Never include INSERT, UPDATE, DELETE, or DROP statements.
 
     Returns:
-        Dictionary with query results or error message
+        Dict[str, Any]: Dictionary with query results or error message
     """
     try:
         # Print the SQL query being executed
